@@ -1,0 +1,92 @@
+.signUpFormContainer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  align-content: center
+
+  form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  .fieldsContainer
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    margin-top: 30px
+    margin-bottom: 5px
+    & div
+      &:first-child
+        margin-right: 30px
+    .valid
+      outline: 3px solid green
+      border-radius: 3px
+    .error
+      border: 1px solid red
+      font-size: 16px
+      padding: 15px 0
+      font-weight: 600
+      color: white
+      text-align: center
+      width: 100%
+      margin-top: 15px
+      margin-bottom: 20px
+    input
+      width: 220px
+      padding: 21px 23px
+      border-radius: 3px
+      outline: none
+      border: none
+      color: #9CA8B7
+      font-size: 16px
+  .submitBtn
+    border-radius: 4px
+    margin-bottom: 40px
+    margin-top: 30px
+    padding: 0
+    display: flex
+    width: 100%
+    button
+      width: 100%
+      padding: 20px 0
+      font-weight: 500
+      font-size: 16px
+      cursor: pointer
+      text-transform: uppercase
+      background-color: #28d2d0
+      border: 1px solid #28d2d0
+      color: #fff
+  .joinAs
+    width: 100%
+    margin-top: 30px
+    margin-bottom: 0
+    border: 1px solid #fff
+    padding: 10px 15px
+
+    input
+      margin-right: 10px
+    label
+      font-size: 20px
+      color: #fff
+      padding-top: 5px
+    p
+      font-size: 10px
+      letter-spacing: 1px
+      text-align: left
+      width: 100%
+      padding-left: 25px
+
+@media (max-width: 600px)
+  .signUpFormContainer
+    form
+      .fieldsContainer
+        display: flex
+        justify-content: center
+        flex-direction: column
+        margin-top: 15px
+        margin-bottom: 15px
+        & div
+          &:first-child
+            margin-right: 0px
+            margin-bottom: 15px

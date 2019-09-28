@@ -1,0 +1,39 @@
+.signUpPageContainer
+  background-color: #3ea9f5
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  color: white
+  .signUpPage
+    min-height: 100vh
+    padding: 0 15px
+    max-width: 1110px
+    width: 100%
+    .pageTitle
+      font-weight: 600
+      font-size: 38px
+      margin-top: 5%
+      text-align: center
+    .pageSubTitle
+      font-size: 18px
+      font-weight: 500
+      text-align: center
+@media (max-width: 560px)
+  .signUpPageContainer
+    .signUpPage
+      .pageTitle
+          font-size: 28px
+      .pageSubTitle
+        margin-top: 5px
+        margin-bottom: 15px
+        font-size: 16px
+
+@media (max-width: 360px)
+  .signUpPageContainer
+    .signUpPage
+      .pageTitle
+        font-size: 24px
+      .pageSubTitle
+        font-size: 14px

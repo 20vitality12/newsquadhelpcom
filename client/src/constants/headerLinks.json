@@ -1,0 +1,32 @@
+{
+  "buyerNav": [
+    {
+      "href": "/dashboard",
+      "text": "View Dashboard"
+    },
+    {
+      "href": "/account",
+      "text": "My Account"
+    },
+    {
+      "href": "/messages",
+      "text": "Messages"
+    },
+    {
+      "href": "/affiliate-dashboard",
+      "text": "Affiliate Dashboard"
+    },
+    {
+      "href": "/",
+      "text": "Logout"
+    }
+  ],
+  "creativeNav":[
+
+  ],
+  "adminNav": [
+
+  ]
+
+
+}
