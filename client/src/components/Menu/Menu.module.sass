@@ -1,0 +1,53 @@
+.navContainer
+  display: flex
+  flex-direction: row
+  justify-content: center
+  z-index: 1
+  .navigation
+    display: flex
+    flex-direction: row
+    li
+      margin-right: 30px
+      &:first-child
+        margin-left: 5px
+      &:last-child
+        margin-right: 5px
+      position: relative
+      &:hover
+        .subNavigation
+          display: block
+      .subNavigation
+        z-index: 274
+        position: absolute
+        top: 100%
+        background-color: #fff
+        border-top: 3.5px solid #377dff
+        width: 100%
+        min-width: 200px
+        display: none
+        li
+          margin-right: 0
+          a
+            padding:  8px 28px
+            font-size: 14px
+            box-sizing: border-box
+            color: #77838f
+            &:hover
+              color: #377dff
+    a
+      text-decoration: none
+      color: #77838f
+      font-size: 16px
+      display: flex
+      line-height: 22px
+      padding:  15px 0
+      vertical-align: center
+      font-weight: 400
+      &:hover
+        color: #377dff
+      i
+        color: #ccc
+        margin-left: 5px
+        margin-top: 4px
+
+

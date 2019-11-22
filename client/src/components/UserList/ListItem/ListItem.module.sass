@@ -1,0 +1,55 @@
+hr
+  border-color: #fcfcfc
+.listItemContainer
+  display: flex
+  justify-content: space-between
+  max-width: 500px
+  width: 100%
+  .photo
+    img
+      border-radius: 50%
+      width: 64px
+      height: 64px
+      border: 1px solid #f9f9f9
+  .details,.switchButton
+    padding: 5px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+  .details
+    margin-right: auto
+    padding-left: 15px
+    .email,.status
+      font-size: 14px
+  .checkButtonActiveContainer
+    background-color: red
+    border-radius: 100%
+    width: 28px
+    height: 28px
+    .check
+      color: #fff
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 7px
+  .checkButtonContainer
+    background-color: #DBE0E6
+    border-radius: 100%
+    width: 28px
+    height: 28px
+    .check
+      color: #fff
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 6px
+
+@media (max-width: 420px)
+  .listItemContainer
+    font-size: 14px
+    justify-content: space-between
+    .details
+      margin-right: auto
+      padding: 0
+      margin-left: 10px

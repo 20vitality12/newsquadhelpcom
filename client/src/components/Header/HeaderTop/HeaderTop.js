@@ -5,15 +5,13 @@ import LoggedHeader from "./LoggedHeader/LoggedHeader";
 import {signUp} from "../../../actions/actionCreator";
 import DefaultHeader from "./DefaultHeader/DefaultHeader";
 
-
-
 function HeaderTop(props) {
     const { user } = props;
 
     function renderHeader() {
         return(
             <>
-                {user ? <LoggedHeader userName={user.displayName}/> : <DefaultHeader/>}
+                {user ? <LoggedHeader userRole={user.role} userName={user.displayName}/> : <DefaultHeader/>}
             </>
         )
     }
@@ -21,7 +19,6 @@ function HeaderTop(props) {
     return(
         <div className={styles.headerTopContainer}>
             {renderHeader()}
-
         </div>
     )
 }

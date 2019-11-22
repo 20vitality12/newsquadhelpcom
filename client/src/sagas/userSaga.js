@@ -2,9 +2,10 @@ import { put, call } from 'redux-saga/effects';
 import ACTION from '../actions/actiontsTypes';
 import history from '../utils/browserHistory';
 import { DASHBOARD } from '../constants/links'
-import { signUp, login, getUserByAccessToken } from '../api/rest/restContoller';
+import { signUp, login, getUserByAccessToken, getUsers, switchUserStatus } from '../api/rest/restContoller';
 import { setTokens } from '../utils/setTokens';
 import { ACCESS_TOKEN } from '../constants/constants';
+
 export function* signUpSaga({candidate}) {
   yield put({ type: ACTION.SIGN_UP_REQUEST });
   try {
@@ -47,8 +48,27 @@ export function* refreshSaga() {
       const { data } = yield getUserByAccessToken(token);
       yield put({ type: ACTION.REFRESH_RESPONSE, user: data.user});
     }
-
   } catch (e) {
     yield put({ type: ACTION.REFRESH_ERROR, error: e });
+  }
+}
+
+export function* getUsersSaga() {
+  yield put({ type: ACTION.GET_USERS_REQUEST });
+  try {
+      const { data } = yield getUsers();
+      yield put({ type: ACTION.GET_USERS_RESPONSE, users: data.users});
+  } catch (e) {
+    yield put({ type: ACTION.GET_USERS_ERROR, error: e });
+  }
+}
+
+export function* switchUserStatusSaga({user}) {
+  yield put({ type: ACTION.SWITCH_USER_STATUS_REQUEST });
+  try {
+    const { data } = yield switchUserStatus(user);
+    yield put({ type: ACTION.SWITCH_USER_STATUS_RESPONSE, user: data.user});
+  } catch (e) {
+    yield put({ type: ACTION.SWITCH_USER_STATUS_ERROR, error: e });
   }
 }

@@ -1,3 +1,4 @@
+import { InternalServerError } from '../errors/index';
 const { RefreshToken } = require('../models/index');
 
 export default async function (req, res, next) {
@@ -11,6 +12,6 @@ export default async function (req, res, next) {
         }
         next();
     } catch (e) {
-        next(err);
+        next(new InternalServerError());
     }
 }

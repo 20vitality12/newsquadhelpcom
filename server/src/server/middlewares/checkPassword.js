@@ -1,3 +1,4 @@
+import { NotFound, InternalServerError } from '../errors/index';
 import bcrypt from 'bcrypt';
 
 export default async function (req, res, next) {
@@ -6,9 +7,12 @@ export default async function (req, res, next) {
         const match = await bcrypt.compare(candidate.password, user.password);
         if (match) {
             next();
+        } else {
+            next(new NotFound());
         }
+
     } catch (e) {
-        next(err);
+        next(new InternalServerError());
     }
 
 }

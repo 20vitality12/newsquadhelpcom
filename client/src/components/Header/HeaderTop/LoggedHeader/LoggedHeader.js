@@ -16,9 +16,13 @@ function LoggedHeader(props) {
                 </Link>
             </div>
             <div onClick={ () => {setIsActiveUserNav(!isActiveUserNav); setIsActiveNav(false)}} className={styles.navContainer}>
+                <img src="https://www.squadhelp.com/assets/nimages/compressed/anonumous-min.png" alt="header-avatar"/>
                 <span>{props.userName}</span>
-                <i  className="fa fa-angle-down"/>
-                { isActiveUserNav && <NavigationList/>}
+                {isActiveUserNav ? <i  className="fa fa-angle-up"/> : <i  className="fa fa-angle-down"/>}
+                <Link className={styles.messageIcon} to={'/messages'}>
+                    <i className="far fa-envelope"/>
+                </Link>
+                { isActiveUserNav && <NavigationList userRole={props.userRole}/>}
             </div>
         </>
     )

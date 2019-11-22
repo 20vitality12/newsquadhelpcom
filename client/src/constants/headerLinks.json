@@ -22,10 +22,52 @@
     }
   ],
   "creativeNav":[
-
+    {
+      "href": "/dashboard",
+      "text": "View Dashboard"
+    },
+    {
+      "href": "/my-entries",
+      "text": "My Entries"
+    },
+    {
+      "href": "/account",
+      "text": "My Account"
+    },
+    {
+      "href": "/messages",
+      "text": "Messages"
+    },
+    {
+      "href": "/affiliate-dashboard",
+      "text": "Affiliate Dashboard"
+    },
+    {
+      "href": "/",
+      "text": "Logout"
+    }
   ],
   "adminNav": [
-
+    {
+      "href": "/admin-page",
+      "text": "Admin Page"
+    },
+    {
+      "href": "/account",
+      "text": "My Account"
+    },
+    {
+      "href": "/messages",
+      "text": "Messages"
+    },
+    {
+      "href": "/affiliate-dashboard",
+      "text": "Affiliate Dashboard"
+    },
+    {
+      "href": "/",
+      "text": "Logout"
+    }
   ]
 
 

@@ -12,7 +12,19 @@ module.exports = {
       isBanned: false,
       createdAt: new Date(),
       updatedAt: new Date(),
-    }], {});
+    },
+    {
+      firstName: 'admin',
+      lastName: 'admin',
+      displayName: 'admin',
+      email: 'admin@gmail.com',
+      password: bcrypt.hashSync('qwe', bcrypt.genSaltSync(8)),
+      role: 'admin',
+      isBanned: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {

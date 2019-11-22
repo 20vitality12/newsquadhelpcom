@@ -1,3 +1,4 @@
+import { NotFound, InternalServerError } from '../errors/index';
 const { User } = require('../models/index');
 
 export default async function(req, res, next) {
@@ -6,12 +7,14 @@ export default async function(req, res, next) {
 
         const { dataValues: user} = await User.find({where: {email: candidate.email}}) ;
 
-        if (user && user.isBanned === false) {
+        if (user && !user.isBanned) {
             req.body.user = user;
             next();
-        }
+        } else (
+            next(new NotFound())
+        )
     } catch (e) {
-        next(e)
+        next(new NotFound())
     }
 
 }

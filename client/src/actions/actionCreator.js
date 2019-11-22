@@ -11,11 +11,18 @@ export const login = candidate => ({
 });
 
 export const logout = () => ({
-  type: ACTION.LOGOUT_ACTION,
-
+  type: ACTION.LOGOUT_ACTION
 });
 
 export const refresh = () => ({
-  type: ACTION.REFRESH_ACTION,
+  type: ACTION.REFRESH_ACTION
+});
 
+export const getUsers = () => ({
+  type: ACTION.GET_USERS_ACTION
+});
+
+export const switchUserStatus = (user) => ({
+  type: ACTION.SWITCH_USER_STATUS_ACTION,
+  user
 });

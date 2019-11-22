@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from './DashboardPage.module.sass';
 import connect from 'react-redux/es/connect/connect';
-import Header from "../../components/Header/Header";
+import DashboardNavigation from "../../components/DashboardNavigation/DashboardNavigation";
+import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 function DashboardPage(props) {
     const { user } = props;
-    console.log(user)
     return(
         <div className={styles.dashboardPageContainer}>
-            <Header/>
+            <DashboardNavigation/>
+            <div className={styles.pageContainer}>
+                {user && <DashboardHeader userName={user.displayName}/>}
+                <Dashboard/>
+            </div>
         </div>
     )
 }
@@ -20,7 +25,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    //login: (dataToSend) => dispatch(login(dataToSend)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardPage);

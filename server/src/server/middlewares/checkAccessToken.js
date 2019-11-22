@@ -1,4 +1,5 @@
-import jwt from 'jsonwebtoken'
+import { Unauthorized, Forbidden, InternalServerError } from '../errors/index';
+import jwt from 'jsonwebtoken';
 import config from '../config/jwt.config';
 
 export default async function(req, res, next) {
@@ -8,16 +9,16 @@ export default async function(req, res, next) {
         if (token) {
             await jwt.verify(token, config.secret, (err, decoded) => {
                 if (err) {
-                    res.send(419)
+                    next(new Forbidden())
                 }
                 req.body.decoded = decoded;
                 next();
             });
         } else {
-            res.send(401);
+            next(new Unauthorized())
         }
     } catch (e) {
-        next(e)
+        next(new InternalServerError())
     }
 
 }

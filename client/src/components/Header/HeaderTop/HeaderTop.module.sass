@@ -10,6 +10,7 @@ $hover-link-color: #377dff
   font-size: 14px
   font-weight: 400
   line-height: 21px
+
   a
     color: $text-color
     &:hover
@@ -22,14 +23,22 @@ $hover-link-color: #377dff
     display: flex
     cursor: pointer
     color: $text-color
+    .messageIcon
+      padding-left: 15px
+      margin-left: 5px
+      border-left: 1px solid #ccc
     &:hover
       color: $hover-link-color
     span, i
-      margin-right: 5px
-
+      margin-right: 10px
     i
       margin-top: 3.5px
     a
 
       &:first-child
         margin-right: 15px
+    img
+      margin-right: 10px
+      width: 20px
+      height: 20px
+      border-radius: 50%
