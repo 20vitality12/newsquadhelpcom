@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import styles from './LoginPage.module.sass';
 import { SIGN_UP } from '../../constants/links';
 import { login } from "../../actions/actionCreator";
@@ -8,12 +9,11 @@ import Header from "../../components/Header/LoginAndSignUpHeader/Header";
 
 function LoginPage(props) {
     function submit (values){
-        const { email, password } = values;
-        const dataToSend = { email, password };
-        console.log(dataToSend)//TODO remove line
+        const dataToSend = _.pick( values, ['email', 'password']);
         props.login(dataToSend);
     }
-    return(
+
+    return (
         <div className={styles.loginPageContainer}>
             <div className={styles.loginPage}>
                 <Header href={SIGN_UP} title={'SignUp'}/>

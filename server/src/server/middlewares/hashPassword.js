@@ -10,6 +10,5 @@ export default async function (req, res, next) {
     } catch (e) {
         next(new InternalServerError());
     }
-
 }
 

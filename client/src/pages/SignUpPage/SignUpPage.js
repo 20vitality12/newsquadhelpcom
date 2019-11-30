@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import styles from "./SignUpPage.module.sass";
 import connect from 'react-redux/es/connect/connect';
 import Header from "../../components/Header/LoginAndSignUpHeader/Header";
@@ -9,9 +10,7 @@ import { signUp } from "../../actions/actionCreator";
 
 function SignUpPage(props) {
     function submit(values) {
-        const { firstName, lastName, displayName, email, password, passwordConfirmation, role } = values;
-        const dataToSend = { firstName, lastName, displayName, email, password, passwordConfirmation, role };
-        console.log(dataToSend)//todo remove line
+        const dataToSend =  _.pick(values, ['firstName', 'lastName', 'displayName', 'email', 'password', 'passwordConfirmation', 'role']);
         props.signUp(dataToSend);
     }
 

@@ -1,0 +1,67 @@
+.settingsContainer
+
+  h2
+    font-weight: 700
+    color: #6C757D
+    line-height: 85px
+    font-size: 18px
+  .settingsCard
+    width: 65%
+    padding: 25px
+    background: #ffffff
+    display: flex
+    flex-direction: column
+    box-shadow: 0 2px 6px 0 rgba(114,124,245,.3)
+    .wrap
+      display: flex
+    button
+      width: 70px
+      border-radius: 4px
+      border: none
+      color: #fff
+      box-shadow: 0 2px 6px 0 rgba(114,124,245,.5)
+      padding: 15px 7px
+      background: #727CF5
+      &:hover
+        background: darken(#727CF5, 8%)
+    .inputRow
+      display: flex
+      margin-bottom: 25px
+      width: 180px
+      label
+        display: flex
+        padding: 8px 0
+    .userData
+      display: flex
+      width: 100%
+      label
+        padding: 8px 15px
+        font-size: 14px
+        font-weight: 400
+      div
+        width: 100%
+        padding: 1px 0
+        input
+          padding: 8px 15px
+          width: 100%
+          box-sizing: border-box
+          font-size: 14px
+          font-weight: 400
+          color: rgb(108, 117, 125)
+          border: 1px solid rgb(222, 226, 230)
+          border-radius: 4px
+          &::placeholder
+            color: #ADB5BD
+    .cardName
+      display: flex
+      justify-content: space-between
+      font-size: 16px
+      font-weight: 700
+      margin-bottom: 25px
+      cursor: default
+      span
+        color: #727cf5
+        cursor: pointer
+        &:hover
+          color: #6b5eae
+

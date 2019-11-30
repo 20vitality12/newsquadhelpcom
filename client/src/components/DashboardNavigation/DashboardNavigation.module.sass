@@ -1,7 +1,7 @@
-.dashboardNavigationContainer
+
+.dashboardNavigationSmall
   background: #455A89
   min-height: 100vh
-  height: 100%
   color: #cedce4
   width: 70px
   a
@@ -11,4 +11,65 @@
     padding: 10px 0
     img
       width: 48px
+      height: 48px
+.dashboardNavigationBig
+  .fixed
+    position: fixed
+    width: 250px
+  background: #455A89
+  //min-height: 100vh
+  color: #cedce4
+  width: 250px
+  height: 100%
+  p
+    padding: 15px 30px
+    color: #fefefe
+    font-size: 12px
+    font-weight: 400
+    cursor: default
+    //position: fixed
+  ul
+    //position: fixed
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    li
+      .wrap
+        display: flex
+        &:hover
+          color: #fff
+      padding: 15px 30px
+      font-size: 15px
+      font-weight: 400
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+      .subNavigation
+        padding-top: 15px
+        .activePage a
+          color: #fff
+        li
+          padding: 5px
+          a
+            color: #cedce4
+            font-size: 14px
+            display: flex
+            justify-content: left
+            padding: 5px
+            margin-left: 25px
+            &:hover
+              color: #fff
+      i
+        padding: 0 10px
+        font-size: 14px
+        &:last-child
+          margin-left: auto
+  a
+    //position: fixed
+    display: flex
+    align-content: center
+    justify-content: center
+    padding: 15px 0
+    img
+      width: 150px
       height: 48px
