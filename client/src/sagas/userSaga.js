@@ -2,7 +2,7 @@ import { put, call } from 'redux-saga/effects';
 import _ from 'lodash';
 import ACTION from '../actions/actiontsTypes';
 import history from '../utils/browserHistory';
-import { DASHBOARD } from '../constants/links'
+import {DASHBOARD, LOGIN} from '../constants/links'
 import {
   signUp,
   login,
@@ -12,7 +12,8 @@ import {
   getUserData,
   updateFullName,
   updateAboutMe,
-  uploadUserPhoto
+  uploadUserPhoto,
+  updateUserPassword
 } from '../api/rest/restContoller';
 import { setTokens } from '../utils/setTokens';
 import { ACCESS_TOKEN } from '../constants/constants';
@@ -121,9 +122,20 @@ export function* uploadUserPhotoSaga({data}) {
   yield put({ type: ACTION.UPLOAD_USER_PHOTO_REQUEST });
   try {
     const {data: response} = data;
-    //const filename = response.filename;
+
     yield put({ type: ACTION.UPLOAD_USER_PHOTO_RESPONSE, user: response});
   } catch (e) {
     yield put({ type: ACTION.UPLOAD_USER_PHOTO_ERROR, error: e });
+  }
+}
+
+export function* updateUserPasswordSaga({data}) {
+  yield put({ type: ACTION.UPDATE_USER_PASSWORD_REQUEST });
+  try {
+
+    const { data: response } = yield updateUserPassword(data);
+    //yield put({ type: ACTION.UPDATE_USER_PASSWORD_RESPONSE, user: response.updatedData});
+  } catch (e) {
+    yield put({ type: ACTION.UPDATE_USER_PASSWORD_ERROR, error: e });
   }
 }

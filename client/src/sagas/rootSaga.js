@@ -11,6 +11,7 @@ import {
   updateUserFullNameSaga,
   updateUserAboutMeSaga,
   uploadUserPhotoSaga,
+  updateUserPasswordSaga
 } from './userSaga';
 
 function* rootSaga() {
@@ -24,6 +25,7 @@ function* rootSaga() {
   yield takeLatest(ACTION.UPDATE_USER_FULL_NAME_ACTION, updateUserFullNameSaga);
   yield takeLatest(ACTION.UPDATE_USER_ABOUT_ME_ACTION, updateUserAboutMeSaga);
   yield takeLatest(ACTION.UPLOAD_USER_PHOTO_ACTION, uploadUserPhotoSaga);
+  yield takeLatest(ACTION.UPDATE_USER_PASSWORD_ACTION, updateUserPasswordSaga);
 }
 
 export default rootSaga;

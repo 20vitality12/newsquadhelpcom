@@ -5,3 +5,4 @@ export const CONTEST_TYPE = '/contest-type';
 export const ADMIN_PAGE = '/admin-page';
 export const MESSAGES = '/messages';
 export const ACCOUNT_DETAILS = '/account-details';
+export const CHANGE_PASSWORD = '/change_password';

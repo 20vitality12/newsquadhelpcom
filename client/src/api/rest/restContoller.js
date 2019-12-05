@@ -7,5 +7,6 @@ export const getUserByAccessToken = (token) => axios.post(`${restURL}/user/get-u
 export const switchUserStatus = (data) => axios.post(`${restURL}/user/switch-user-status`, data);
 export const updateFullName = (data) => axios.post(`${restURL}/user/update-user-full-name`, data);
 export const updateAboutMe = (data) => axios.post(`${restURL}/user/update-user-about-me`, data);
+export const updateUserPassword = (data) => axios.post(`${restURL}/user/update-user-password`, data);
 export const getUsers = () => axios.get(`${restURL}/user/get-users`);
 export const getUserData = () => axios.get(`${restURL}/user/get-user-data`);

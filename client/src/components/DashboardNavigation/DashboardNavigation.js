@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './DashboardNavigation.module.sass';
 import { Link } from 'react-router-dom';
-import {CONTEST_TYPE, DASHBOARD, MESSAGES, ACCOUNT_DETAILS} from "../../constants/links";
+import {CONTEST_TYPE, DASHBOARD, MESSAGES, ACCOUNT_DETAILS, CHANGE_PASSWORD} from "../../constants/links";
 
 function DashboardNavigation(props) {
     const { isActive, currentPage } =  props;
@@ -81,7 +81,7 @@ function DashboardNavigation(props) {
                                 </Link>
                             </li>
                             <li>
-                                <Link to={'*'}>
+                                <Link to={CHANGE_PASSWORD}>
                                     Change Password
                                 </Link>
                             </li>

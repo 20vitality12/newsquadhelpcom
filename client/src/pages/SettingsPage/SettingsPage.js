@@ -44,7 +44,7 @@ function SettingsPage(props) {
 
     console.log(user)
     return(
-        <div className={styles.dashboardPageContainer}>
+        <div className={styles.settingsPageContainer}>
             <DashboardNavigation currentPage={ACCOUNT_DETAILS} isActive={isActive}/>
             <div className={styles.pageContainer}>
                 {user && <DashboardHeader

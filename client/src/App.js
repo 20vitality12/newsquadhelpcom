@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.sass';
 import { Route, Router, Switch } from 'react-router-dom';
-import { DASHBOARD, LOGIN, SIGN_UP, ADMIN_PAGE, ACCOUNT_DETAILS } from './constants/links'
+import { DASHBOARD, LOGIN, SIGN_UP, ADMIN_PAGE, ACCOUNT_DETAILS, CHANGE_PASSWORD } from './constants/links'
 import history from './utils/browserHistory';
 import LogProps from './hoc/requireAuth';
 import HomePage from './pages/HomePage/HomePage';
@@ -11,6 +11,7 @@ import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import AdminPage from "./pages/AdminPage/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import SettingsPage from "./pages/SettingsPage/SettingsPage";
+import ChangePasswordPage from "./pages/ChangePasswordPage/ChangePasswordPage";
 
 function App (){
     return (
@@ -24,7 +25,7 @@ function App (){
                         <Route path={SIGN_UP} component={SignUpPage}/>
                         <Route path={ADMIN_PAGE} component={AdminPage}/>
                         <Route path={ACCOUNT_DETAILS} component={SettingsPage}/>
-
+                        <Route path={CHANGE_PASSWORD} component={ChangePasswordPage}/>
                         <Route path="*" component={NotFoundPage}/>
                     </Switch>
                 </div>

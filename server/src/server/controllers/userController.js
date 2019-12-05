@@ -1,5 +1,4 @@
 import _ from 'lodash';
-
 import createTokens from "../utils/createTokens";
 import { InternalServerError, NotFound } from '../errors/index';
 import {ABOUT_ME_LIST} from "../constants/constants";
@@ -24,7 +23,7 @@ async function createUser(req, res, next) {
 async function login(req, res, next) {
     try {
         const { user: userData } = req.body;
-        const user =_.pick(userData, ['id' ,'displayName', 'email' , 'isBanned', 'role']);
+        const user =_.pick(userData, ['id' ,'displayName', 'email' , 'isBanned', 'role', 'filename']);
         const tokens = await createTokens(user);
 
         res.send({user, tokens})
@@ -43,21 +42,6 @@ async function refresh(req, res, next) {
         next(new InternalServerError())
     }
 }
-
-// async function getUserByAccessToken(req, res, next) {
-//     try {
-//
-//         const { id }  = req.body.decoded;
-//         const { dataValues: userData } = await User.findOne({where: {id}});
-//
-//         const user = _.pick(userData, ['id' ,'displayName', 'email' , 'isBanned', 'role']);
-//
-//         user && !user.isBanned ? res.send({user}) : next(new NotFound());
-//     } catch (e) {
-//         next(new InternalServerError());
-//
-//     }
-// }
 
 async function getUserByAccessToken(req, res, next) {
     try {
@@ -214,6 +198,15 @@ async function uploadUserPhoto(req, res, next) {
         next(new InternalServerError());
     }
 }
+
+async function updateUserPassword(req, res, next) {
+    try {
+        console.log(req.body)
+    } catch (e) {
+        next(new InternalServerError());
+    }
+}
+
 export {
     createUser,
     login,
@@ -224,5 +217,6 @@ export {
     getUserData,
     updateUserFullName,
     updateUserAboutMe,
+    updateUserPassword,
     uploadUserPhoto
 }

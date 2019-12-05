@@ -45,3 +45,8 @@ export const uploadUserPhoto = data => ({
   type: ACTION.UPLOAD_USER_PHOTO_ACTION,
   data
 });
+
+export const updatePassword = data => ({
+  type: ACTION.UPDATE_USER_PASSWORD_ACTION,
+  data
+});

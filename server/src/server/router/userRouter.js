@@ -21,6 +21,7 @@ router.post('/refresh', checkRefreshToken, getRefreshToken, userController.refre
 router.post('/switch-user-status', checkAccessToken, checkAdminAccess, userController.switchUserStatus);
 router.post('/update-user-full-name', checkAccessToken,  userController.updateUserFullName);
 router.post('/update-user-about-me', checkAccessToken,  userController.updateUserAboutMe);
+router.post('/update-user-password', checkAccessToken,  userController.updateUserPassword);
 router.post('/upload-user-photo', checkAccessToken, upload, userController.uploadUserPhoto);
 router.get('/get-users', checkAccessToken, checkAdminAccess, userController.getUsers);
 router.get('/get-user-data', checkAccessToken, userController.getUserData);
