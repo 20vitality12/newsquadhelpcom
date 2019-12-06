@@ -19,7 +19,7 @@ module.exports = {
 			},
 			filename: {
 				type: Sequelize.STRING,
-				defaultValue: '2019-11-28T21:44:57.890Zanonumous-min.png',
+				defaultValue: '1574978045213_anonumous-min.png',
 				allowNull: false
 			},
 			createdAt: {

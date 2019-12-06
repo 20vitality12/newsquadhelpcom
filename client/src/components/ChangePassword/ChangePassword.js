@@ -56,7 +56,11 @@ function ChangePassword(props) {
                     />
                 </div>
             </div>
-            <button type={'submit'}>
+            <button type={'submit'} onClick={ () => {
+                setPasswordHook('');
+                setNewPasswordHook('')
+                setNewPasswordRepeatHook('')
+            }}>
                 <span>Update</span>
             </button>
         </form>

@@ -7,7 +7,7 @@ const { User, UsersData, Photo } = require('../models/index');
 
 async function createUser(req, res, next) {
     try {
-        const password  = req.body.hashedPassword;
+        const { hashedPassword: password }  = req.body;
         const { firstName, lastName, displayName, email, role} = req.body.candidate;
         const { dataValues: userData } = await User.create({ firstName, lastName, displayName, email, password, role });
         const user = _.pick(userData, ['id' ,'displayName', 'email' , 'isBanned', 'role']);
@@ -201,7 +201,11 @@ async function uploadUserPhoto(req, res, next) {
 
 async function updateUserPassword(req, res, next) {
     try {
-        console.log(req.body)
+        const { id } = req.body.decoded;
+        const { hashedPassword } = req.body;
+
+        await User.update( {password: hashedPassword}, {returning: true, where: {id}} );
+        res.send(200);
     } catch (e) {
         next(new InternalServerError());
     }

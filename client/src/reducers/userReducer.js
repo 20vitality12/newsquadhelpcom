@@ -263,6 +263,30 @@ export default function (state = initialState, action) {
         isFetching: false,
       };
     }
+    ///UPDATE_USER_PASSWORD///
+    case ACTION.UPDATE_USER_PASSWORD_REQUEST: {
+      return {
+        ...state,
+        isFetching: true,
+        error: null,
+      };
+    }
+    case ACTION.UPDATE_USER_PASSWORD_RESPONSE: {
+      return {
+        ...state,
+        user: replaceUserData(state.user),
+        isFetching: false,
+        isLogged: true,
+        error: null,
+      };
+    }
+    case ACTION.UPDATE_USER_PASSWORD_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+        isFetching: false,
+      };
+    }
     default: {
       return state;
     }

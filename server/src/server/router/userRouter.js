@@ -8,6 +8,8 @@ import checkRefreshTokensCount from "../middlewares/checkRefreshTokensCount";
 import checkAccessToken from "../middlewares/checkAccessToken";
 import checkRefreshToken from "../middlewares/checkRefreshToken";
 import checkAdminAccess from "../middlewares/checkAdminAccess";
+import comparePassword from "../middlewares/comparePassword";
+import getUserPassword from "../middlewares/getUserPassword";
 import getRefreshToken from "../middlewares/getRefreshToken";
 import upload from "../middlewares/fileUpload";
 
@@ -21,7 +23,7 @@ router.post('/refresh', checkRefreshToken, getRefreshToken, userController.refre
 router.post('/switch-user-status', checkAccessToken, checkAdminAccess, userController.switchUserStatus);
 router.post('/update-user-full-name', checkAccessToken,  userController.updateUserFullName);
 router.post('/update-user-about-me', checkAccessToken,  userController.updateUserAboutMe);
-router.post('/update-user-password', checkAccessToken,  userController.updateUserPassword);
+router.post('/update-user-password', checkAccessToken, getUserPassword, comparePassword, hashPassword, userController.updateUserPassword);
 router.post('/upload-user-photo', checkAccessToken, upload, userController.uploadUserPhoto);
 router.get('/get-users', checkAccessToken, checkAdminAccess, userController.getUsers);
 router.get('/get-user-data', checkAccessToken, userController.getUserData);
