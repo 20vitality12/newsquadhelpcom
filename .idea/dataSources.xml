@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="todo-dev@localhost" uuid="ba93af28-43c9-444f-8bb0-d53205bac137">
+    <data-source source="LOCAL" name="PostgreSQL - todo-dev@localhost" uuid="ba93af28-43c9-444f-8bb0-d53205bac137">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/todo-dev</jdbc-url>
+      <jdbc-url>jdbc:postgresql://192.168.0.109:5432/todo-dev</jdbc-url>
     </data-source>
   </component>
 </project>

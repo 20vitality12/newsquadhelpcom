@@ -32,7 +32,7 @@ function AboutMe(props) {
                     <label>Bio/ My Interests</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ interests }</label>}
+                    {!isActive && <label>{ interests || 'interests' }</label>}
                     {isActive &&
                     <Field
                         name={'interests'}
@@ -48,7 +48,7 @@ function AboutMe(props) {
                     <label>Why do I like to use Squadhelp?</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ motivation }</label>}
+                    {!isActive && <label>{ motivation || 'motivation' }</label>}
                     {isActive &&
                     <Field
                     name={'motivation'}
@@ -68,7 +68,7 @@ function AboutMe(props) {
                     <label>Address 1</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ address }</label>}
+                    {!isActive && <label>{ address || 'address'}</label>}
                     {isActive &&
                     <Field
                         name={'address'}
@@ -86,7 +86,7 @@ function AboutMe(props) {
                     <label>City</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ city }</label>}
+                    {!isActive && <label>{ city || 'city' }</label>}
                     {isActive &&
                     <Field
                         name={'city'}
@@ -104,7 +104,7 @@ function AboutMe(props) {
                     <label>State / Province</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ stateOrProvince }</label>}
+                    {!isActive && <label>{ stateOrProvince || 'state' }</label>}
                     {isActive &&
                     <Field
                         name={'stateOrProvince'}
@@ -122,7 +122,7 @@ function AboutMe(props) {
                     <label>Pin code / Zip code</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ pin }</label>}
+                    {!isActive && <label>{ pin || 'pin' }</label>}
                     {isActive &&
                     <Field
                         name={'pin'}
@@ -140,7 +140,7 @@ function AboutMe(props) {
                     <label>Country</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ country }</label>}
+                    {!isActive && <label>{ country || 'country' }</label>}
                     {isActive &&
                     <Field
                         name={'country'}
@@ -158,7 +158,7 @@ function AboutMe(props) {
                     <label>Phone</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ phone }</label>}
+                    {!isActive && <label>{ phone || 'phone' }</label>}
                     {isActive &&
                     <Field
                         name={'phone'}
@@ -190,7 +190,7 @@ function AboutMe(props) {
                     <label>LinkedIn Url</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ linkedIn }</label>}
+                    {!isActive && <label>{ linkedIn || 'linkedIn' }</label>}
                     {isActive &&
                     <Field
                         name={'linkedIn'}
@@ -208,7 +208,7 @@ function AboutMe(props) {
                     <label>Twitter Handle</label>
                 </div>
                 <div className={styles.userData}>
-                    {!isActive && <label>{ twitter }</label>}
+                    {!isActive && <label>{ twitter || 'twitter' }</label>}
                     {isActive &&
                     <Field
                         name={'twitter'}
@@ -220,7 +220,6 @@ function AboutMe(props) {
                     />}
                 </div>
             </div>
-            <p>test</p>
             {isActive &&
             <button type={'submit'}>
                 <span>Update</span>

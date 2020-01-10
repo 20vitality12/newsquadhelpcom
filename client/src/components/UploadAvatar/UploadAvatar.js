@@ -15,17 +15,17 @@ function UploadAvatar(props) {
     };
     const fileInput = React.createRef();
 
-    function handleSubmit1(e) {
+    function handleSubmit(e) {
         e.preventDefault();
         const data = new FormData();
-        data.append('file', fileInput.current.files[0])
+        data.append('file', fileInput.current.files[0]);
         axios.post("http://localhost:3000/api/user/upload-user-photo", data).then(response => {
             uploadPhoto(response)
         });
         setFileName('');
     }
     return(
-        <form onSubmit={handleSubmit1} className={styles.uploadPhotoCard}>
+        <form onSubmit={handleSubmit} className={styles.uploadPhotoCard}>
             <div className={styles.cardName}>
                 <p>UPLOAD PHOTO</p>
             </div>

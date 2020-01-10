@@ -11,7 +11,7 @@ function HeaderTop(props) {
     function renderHeader() {
         return(
             <>
-                {user ? <LoggedHeader userRole={user.role} userName={user.displayName}/> : <DefaultHeader/>}
+                {user ? <LoggedHeader user={user} userRole={user.role} userName={user.displayName}/> : <DefaultHeader/>}
             </>
         )
     }

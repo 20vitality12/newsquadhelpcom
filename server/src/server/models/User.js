@@ -2,12 +2,6 @@ import { CREATIVE, BUYER, ADMIN } from '../constants/constants';
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,

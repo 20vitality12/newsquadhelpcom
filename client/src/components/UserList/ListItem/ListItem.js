@@ -3,12 +3,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import styles from './ListItem.module.sass';
 import { ADMIN } from "../../../constants/userRoles";
+import {imagesURL} from "../../../api/baseURL";
 
 
 function ListItem(props) {
-    const { user } = props;
-    const { id, email, role, isBanned, displayName} = props.user;
-
+    let { data } = props;
+    const user = data.User;
+    const filename = data.filename ? data.filename : 'anonumous.png';
     function notify(){
         toast.warn("You can`t switch administrator status!");
     }
@@ -17,17 +18,17 @@ function ListItem(props) {
         <>
             <div className={styles.listItemContainer}>
                 <div className={styles.photo}>
-                    <img src="https://www.squadhelp.com/assets/nimages/compressed/anonumous-min.png" alt="user-photo"/>
+                    <img src={imagesURL +  filename} alt="userAvatar"/>
                 </div>
                 <div className={styles.details}>
-                    <p>#{id} | {displayName}</p>
-                    <p className={styles.email}>{email}</p>
-                    <p className={styles.status}>{role} | {isBanned ? "banned": "active"}</p>
+                    <p>#{user.id} | {user.displayName}</p>
+                    <p className={styles.email}>{user.email}</p>
+                    <p className={styles.status}>{user.role} | {user.isBanned ? "banned": "active"}</p>
                 </div>
                 <div className={styles.switchButton}>
-                    <div onClick={()=> { user.role !== ADMIN ? props.switchUserStatus(user) : notify()}} className={ isBanned ? styles.checkButtonActiveContainer : styles.checkButtonContainer}>
+                    <div onClick={()=> { user.role !== ADMIN ? props.switchUserStatus(user) : notify()}} className={ user.isBanned ? styles.checkButtonActiveContainer : styles.checkButtonContainer}>
                         <div className={styles.check}>
-                            { isBanned ? <i className="fas fa-times"/> : <i className="fas fa-check"/>}
+                            { user.isBanned ? <i className="fas fa-times"/> : <i className="fas fa-check"/>}
                         </div>
                     </div>
                 </div>

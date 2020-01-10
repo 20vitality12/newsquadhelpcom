@@ -14,6 +14,20 @@ module.exports = {
             twitter: 'eqweqweqweqwe',
             createdAt: new Date(),
             updatedAt: new Date(),
+        }, {
+            userId: 2,
+            interests: 'qwe',
+            motivation: 'ewqeqweqweqweqweqwe',
+            address: 'qeweewqwq',
+            city: 'qwewqeewqe',
+            stateOrProvince: 'qweqwwqe',
+            pin: 700311,
+            country: 'qweqwe',
+            phone: '0500750260',
+            linkedIn: 'qweqwewq',
+            twitter: 'eqweqweqweqwe',
+            createdAt: new Date(),
+            updatedAt: new Date(),
         }], {});
     },
 

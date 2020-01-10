@@ -7,8 +7,9 @@ export default async function(req, res, next) {
         const { candidate } = req.body ;
 
         const { dataValues: userData} = await User.find({where: {email: candidate.email}}) ;
-        const { dataValues: photo} = await Photo.find({where: {userId: userData.id}});
 
+        const { dataValues: photo} = await Photo.find({where: {userId: userData.id}});
+        console.log(photo)
         const user = _.assign(userData, photo);
 
         if (user && !user.isBanned) {

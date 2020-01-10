@@ -10,16 +10,10 @@ module.exports = {
 			},
 			userId: {
 				type: Sequelize.INTEGER,
-				allowNull: false,
-				onDelete: 'CASCADE',
-				references: {
-					model: 'Users',
-					key: 'id'
-				}
 			},
 			filename: {
 				type: Sequelize.STRING,
-				defaultValue: '1574978045213_anonumous-min.png',
+				defaultValue: 'anonumous.png',
 				allowNull: false
 			},
 			createdAt: {

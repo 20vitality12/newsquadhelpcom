@@ -12,6 +12,8 @@ async function createUser(req, res, next) {
         const { dataValues: userData } = await User.create({ firstName, lastName, displayName, email, password, role });
         const user = _.pick(userData, ['id' ,'displayName', 'email' , 'isBanned', 'role']);
         const tokens = await createTokens(user);
+        await Photo.create({userId: user.id});
+        await UsersData.create({userId: user.id});
 
         res.send({user, tokens})
     } catch (e) {
@@ -61,6 +63,7 @@ async function getUserByAccessToken(req, res, next) {
 
         const { dataValues: userDataFromDB } = userData;
         const filename = _.pick(additionalData, 'filename');
+
         const user = _.assign(userDataFromDB, filename);
 
         user && !user.isBanned ? res.send({user}) : next(new NotFound());
@@ -69,6 +72,7 @@ async function getUserByAccessToken(req, res, next) {
 
     }
 }
+
 async function getUserData(req, res, next) {
     try {
         const { id }  = req.body.decoded;
@@ -96,11 +100,20 @@ async function getUserData(req, res, next) {
 
 async function getUsers(req, res, next) {
     try {
-        const users  = await User.findAll({
-            order: [
-                ['id', 'ASC']
-            ],
-            attributes: { exclude: ['password', 'createdAt', 'updatedAt', 'firstName', 'lastName']}
+        const users = await Photo.findAll({
+            attributes: {
+                exclude: [
+                    'userId', 'createdAt', 'updatedAt','id'
+                ]},
+            include: [{
+                model: User,
+                order: [
+                    ['id', 'ASC']
+                ],
+                attributes: {
+                    exclude: ['password', 'createdAt', 'updatedAt', 'firstName', 'lastName']},
+            }],
+
         });
         users ? res.send({users}) : next(new NotFound());
     } catch (e) {

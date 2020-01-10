@@ -13,6 +13,7 @@ app.use(express.json());
 
 app.use('/api/public', express.static('public'));
 
+
 app.use('/api', router);
 
 

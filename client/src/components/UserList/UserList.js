@@ -18,7 +18,7 @@ function UserList(props) {
       <>
           { users &&
             <ul className={styles.list}>
-              { users.map( (item, index) => <ListItem user={item} key={index} switchUserStatus={clickContactHandler}/>)}
+              { users.map( (item, index) => <ListItem data={item} key={index} switchUserStatus={clickContactHandler}/>)}
             </ul>
           }
       </>
