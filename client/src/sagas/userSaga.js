@@ -12,7 +12,6 @@ import {
   getUserData,
   updateFullName,
   updateAboutMe,
-  uploadUserPhoto,
   updateUserPassword
 } from '../api/rest/restContoller';
 import { setTokens } from '../utils/setTokens';

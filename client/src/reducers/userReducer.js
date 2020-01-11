@@ -12,7 +12,9 @@ const initialState = {
 
 export default function (state = initialState, action) {
   function replaceNewData(users) {
-    users[users.findIndex( user =>  user.id === action.user.id)] = action.user;
+    const data = {...users[users.findIndex( user =>  user.User.id === action.user.id)]}
+    data.User = action.user;
+    users[users.findIndex( user =>  user.User.id === action.user.id)] = data;
     return [...users];
   }
   function replaceUserData(data) {

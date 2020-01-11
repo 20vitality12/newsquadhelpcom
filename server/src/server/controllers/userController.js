@@ -107,14 +107,17 @@ async function getUsers(req, res, next) {
                 ]},
             include: [{
                 model: User,
+
                 order: [
                     ['id', 'ASC']
                 ],
                 attributes: {
                     exclude: ['password', 'createdAt', 'updatedAt', 'firstName', 'lastName']},
             }],
-
+            raw: true,
+            nest: true,
         });
+        console.log(users)
         users ? res.send({users}) : next(new NotFound());
     } catch (e) {
         next(new InternalServerError());
