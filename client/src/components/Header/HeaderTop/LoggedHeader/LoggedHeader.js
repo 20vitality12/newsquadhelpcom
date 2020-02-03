@@ -7,7 +7,7 @@ import {imagesURL} from "../../../../api/baseURL";
 
 function LoggedHeader(props) {
     const { user } = props;
-    const filename = user.filename ? user.filename : 'anonumous.png';
+    const filename = user.photo ? user.photo.filename : 'anonumous.png';
     const [isActiveUserNav, setIsActiveUserNav] = useState(false);
     const [isActiveNav, setIsActiveNav] = useState(false);
     return(

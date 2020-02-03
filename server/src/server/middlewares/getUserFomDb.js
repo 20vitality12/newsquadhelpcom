@@ -6,12 +6,19 @@ export default async function(req, res, next) {
     try {
         const { candidate } = req.body ;
 
-        const { dataValues: userData} = await User.find({where: {email: candidate.email}}) ;
+        const user = await User.find({
+            attributes: {exclude: ['createdAt', 'updatedAt', 'firstName', 'lastName']},
+            where: {email: candidate.email},
+            include: [{
+                model: Photo,
+                as: 'photo',
+                attributes: {exclude: ['userId', 'createdAt', 'updatedAt','id']},
 
-        const { dataValues: photo} = await Photo.find({where: {userId: userData.id}});
-        console.log(photo)
-        const user = _.assign(userData, photo);
-
+            }],
+            raw: true,
+            nest: true,
+        });
+        console.log(user)
         if (user && !user.isBanned) {
             req.body.user = user;
             next();

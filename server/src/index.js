@@ -13,9 +13,7 @@ app.use(express.json());
 
 app.use('/api/public', express.static('public'));
 
-
 app.use('/api', router);
-
 
 app.listen(port, console.log(`Server has been started on port ${port}...`));
 

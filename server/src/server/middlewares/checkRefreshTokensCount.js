@@ -8,7 +8,7 @@ export default async function (req, res, next) {
         const refreshTokensInDB = await RefreshToken.count({where: {userId: user.id}});
 
         if(refreshTokensInDB > 2) {
-            RefreshToken.destroy({where: {userId: user.id}})
+            await RefreshToken.destroy({where: {userId: user.id}})
         }
         next();
     } catch (e) {

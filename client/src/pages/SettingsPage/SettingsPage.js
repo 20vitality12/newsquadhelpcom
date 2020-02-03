@@ -68,7 +68,7 @@ function SettingsPage(props) {
                         isActive={editAboutMe}
                         setIsActive={setEditAboutMe}
                         onSubmit={submitAboutMeSettings}
-                        userData={userData}
+                        user={userData}
                     />}
                 </div>
 

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { NotFound, InternalServerError } from '../errors/index';
 const { User } = require('../models/index');
 

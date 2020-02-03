@@ -22,8 +22,6 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false
 		}
 	});
-	RefreshToken.associate = function (models) {
-		RefreshToken.belongsTo(models.User, {foreignKey: 'userId', sourceKey: 'id'});
-	};
+
 	return RefreshToken;
 };

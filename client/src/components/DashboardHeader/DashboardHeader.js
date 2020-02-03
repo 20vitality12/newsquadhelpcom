@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {imagesURL} from '../../api/baseURL';
 function DashboardHeader(props) {
     const { user, isActive, setActive } =  props;
-    const filename = user.filename ? user.filename : 'anonumous.png';
+    const filename = user.photo ? user.photo.filename : 'anonumous.png';
 
     return(
         <div className={styles.dashBoardHeaderContainer}>

@@ -7,7 +7,7 @@ export default async function (req, res, next) {
         const { refreshToken } = req.body;
 
         if (refreshToken) {
-            jwt.verify(refreshToken, config.refreshTokenSecret, (err, decoded) => {
+            await jwt.verify(refreshToken, config.refreshTokenSecret, (err, decoded) => {
                 if (err) {
                     return next(new Unauthorized())
                 }

@@ -58,8 +58,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true
         },
     });
-    UsersData.associate = function (models) {
-        UsersData.belongsTo(models.User, {foreignKey: 'userId', sourceKey: 'id'});
-    };
+
     return UsersData;
 };

@@ -7,7 +7,8 @@ import renderTextArea from "../CustomInputs/textarea";
 
 function AboutMe(props) {
 
-    const { userData, handleSubmit, isActive, setIsActive } =  props;
+    const { user, handleSubmit, isActive, setIsActive } =  props;
+    const { userData } = user;
     const { interests, motivation, address, city, stateOrProvince, pin, country, phone, linkedIn , twitter, id} = userData;
     const [interestsHook, setInterestsHook] = useState(interests);
     const [motivationHook, setMotivationHook] = useState(motivation);

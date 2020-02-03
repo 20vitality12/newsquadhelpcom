@@ -7,9 +7,9 @@ import {imagesURL} from "../../../api/baseURL";
 
 
 function ListItem(props) {
-    const { data } = props;
-    const { User: user } = data;
-    const filename = data.filename ? data.filename : 'anonumous.png';
+    const { user } = props;
+    const filename = user.photo ? user.photo.filename : 'anonumous.png';
+
     function notify(){
         toast.warn("You can`t switch administrator status!");
     }

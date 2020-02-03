@@ -1,5 +1,5 @@
 import upload from "../config/fileUplod";
-
+import { InternalServerError } from '../errors/index';
 export default async function (req, res, next) {
     try {
         const {id} = req.body.decoded;

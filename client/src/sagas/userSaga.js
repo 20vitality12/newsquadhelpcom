@@ -121,8 +121,8 @@ export function* uploadUserPhotoSaga({data}) {
   yield put({ type: ACTION.UPLOAD_USER_PHOTO_REQUEST });
   try {
     const {data: response} = data;
-
-    yield put({ type: ACTION.UPLOAD_USER_PHOTO_RESPONSE, user: response});
+    console.log(response)
+    yield put({ type: ACTION.UPLOAD_USER_PHOTO_RESPONSE, user: response.user});
   } catch (e) {
     yield put({ type: ACTION.UPLOAD_USER_PHOTO_ERROR, error: e });
   }
