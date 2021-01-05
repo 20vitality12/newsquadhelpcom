@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-react-app": "^3.0.7",
     "eslint-plugin-jest": "^22.3.0",
